@@ -1,12 +1,17 @@
+// src/data/product.js
+
 import whiteBanana from "../assets/products/white-banana.png";
 import rawBanana from "../assets/products/raw-banana.png";
 import khandeshi from "../assets/products/khandeshi.png";
+
+// If in future any image is missing, you can add a placeholder in assets/products/placeholder.png
+// import placeholder from "../assets/products/placeholder.png";
 
 const products = [
   {
     id: 1,
     name: "White Green Banana Powder",
-    image: whiteBanana,
+    image: whiteBanana, // fallback: placeholder
     pricePerKg: 280,
     description: [
       "Fine quality white green banana powder",
