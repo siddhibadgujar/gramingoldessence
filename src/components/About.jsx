@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import bananaFlow from "../assets/about/banana.jpeg";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
 export default function About() {
   return (
-    <section className="w-full bg-gray-50 py-20 px-4">
+    <section id="about" className="w-full bg-gray-50 py-20 px-4 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Heading */}
@@ -25,13 +25,12 @@ export default function About() {
 
         {/* Image + Content */}
         <div className="grid md:grid-cols-2 gap-14 items-center mb-20">
-
-          {/* Image */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
+            transition={{ delay: 0.1 }}
             className="flex justify-center"
           >
             <img
@@ -41,12 +40,12 @@ export default function About() {
             />
           </motion.div>
 
-          {/* Text Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
+            transition={{ delay: 0.3 }}
             className="space-y-5 text-gray-700 text-center md:text-left"
           >
             <h3 className="text-3xl font-bold text-gray-800">
@@ -67,21 +66,18 @@ export default function About() {
                   selected <strong>Indian Spice Blends</strong>
                 </span>
               </li>
-
               <li className="flex items-start gap-2">
                 <span className="text-green-600 mt-1">●</span>
                 <span>
                   Focused on <strong>purity, consistency & export-ready quality</strong>
                 </span>
               </li>
-
               <li className="flex items-start gap-2">
                 <span className="text-green-600 mt-1">●</span>
                 <span>
                   Serving <strong>B2B & B2C buyers</strong> across India and global markets
                 </span>
               </li>
-
               <li className="flex items-start gap-2">
                 <span className="text-green-600 mt-1">●</span>
                 <span>
@@ -97,7 +93,6 @@ export default function About() {
 
         {/* Info Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-
           {[
             {
               title: "Our Mission",
@@ -116,7 +111,7 @@ export default function About() {
               ],
             },
             {
-              title: "Industries Served",
+              title: "Testimonials",
               points: [
                 "Food & Beverage Manufacturers",
                 "Infant & Health Food Brands",
@@ -126,8 +121,8 @@ export default function About() {
           ].map((card, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 200 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 220 }}
               className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg border-t-4 border-green-600"
             >
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
@@ -140,9 +135,7 @@ export default function About() {
               </ul>
             </motion.div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

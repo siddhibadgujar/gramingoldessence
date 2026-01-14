@@ -1,8 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-6 px-4">
+    <motion.footer
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white border-t border-gray-100 py-6 px-4"
+    >
       <div className="max-w-6xl mx-auto text-center text-gray-600 text-sm space-y-2">
 
         <p>
@@ -15,12 +22,12 @@ export default function Footer() {
 
         <p>
           Developed & Managed By{" "}
-          <span className="font-medium text-gray-800">
+          <span className="font-medium text-gray-800 hover:text-green-700 transition">
             Siddhi Badgujar
           </span>
         </p>
 
       </div>
-    </footer>
+    </motion.footer>
   );
 }

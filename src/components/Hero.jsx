@@ -1,15 +1,18 @@
-import { motion } from "framer-motion"
-import heroImage from "../assets/hero/info_combo.jpeg"
+import { motion } from "framer-motion";
+import heroImage from "../assets/hero/info_combo.jpeg";
 
 export default function Hero() {
   return (
-    <section className="w-screen bg-white pt-0 sm:pt-0">
-      {/* pt-16 / pt-20 = navbar height spacing */}
-
+    <section
+      id="home"
+      className="w-full bg-white pt-0 sm:pt-0 overflow-x-hidden"
+    >
+      {/* Hero Image Container */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 40, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
         className="
           w-full
           flex
@@ -30,5 +33,5 @@ export default function Hero() {
         />
       </motion.div>
     </section>
-  )
+  );
 }
